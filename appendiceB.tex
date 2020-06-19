@@ -1,0 +1,38 @@
+\chapter{AutomaticKeepAliveClientMixin}
+\label{cap:B}
+
+Nei linguaggi di programmazione orientati agli oggetti, una \textbf{mixin} è una classe che contiene dei metodi che possono essere utilizzati da parte di altre classi, senza la necessità di dover \textit{estendere} la classe. Il modo in cui le classi ottengono l'accesso ai metodi della mixin dipende dal linguaggio. Una mixin può essere vista come un'interfaccia i cui metodi sono già implementati.
+
+Queste particolari classi vengono ampiamente utilizzate nei linguaggi moderni, sia nei linguaggi che implementano l'\textit{ereditarietà singola}, sia nei linguaggi che supportano l'\textit{ereditarietà multipla}. La problematica principale dell'ereditarietà singola è la mancanza di poter estendere più classi contemporaneamente: questo problema può essere parzialmente risolto con l'utilizzo delle \textit{interfacce}, ma non sempre permettono di ottenere i risultati desiderati. Invece, nonostante l'ereditarietà multipla permetta una maggiore flessibilità nel \textit{riuso del codice}, essa può essere fonte di problemi. In particolare, può verificarsi quello che viene chiamato \textbf{name clash}: è un problema che si verifica quando uno stesso metodo è definito in più \textit{super-classi}. In una situazione del genere, la \textit{sotto-classe} non è in grado di decidere quale metodo ereditare. Sulla base di queste casistiche, l'utilizzo delle mixin si rivela molto utile in quanto permette di aumentare le potenzialità dei linguaggi con ereditarietà singola e di risolvere i problemi causati dall'ereditarietà multipla.
+
+La mixin \verb|AutomaticKeepAliveClientMixin| \cite{keep_alive_mixin} \cite{keep_alive} è una particolare classe che è stata di fondamentale importanza per lo sviluppo dell'applicazione. Questa classe consente ai sotto-alberi di chiedere al framework di essere mantenuti in "\textit{vita}" (\textit{alive}). Tutta la struttura viene mantenuta in vita ogni volta che uno o più discendenti hanno inviato una \verb|KeepAliveNotification|. Per mantenere in "vita", si intende che il framework non deve deallocare o distruggere un determinato oggetto, ma lo deve mantenere attivo, anche se in un dato istante non è strettamente necessario per il proseguimento dell'esecuzione dell'applicazione. Di seguito di introduce un esempio per comprendere meglio l'importante compito di questa classe. Questa mixin è stata di fondamentale importanza per tutte le classi che vanno a comporre l'interfaccia grafica. Infatti, senza l'utilizzo di questa classe, ad ogni cambio di schermata, le pagine che sono state caricate precedentemente, venivano deallocate. Di conseguenza, quando si ritorna su una pagina che era già stata visualizzata precedentemente, questa doveva essere totalmente ricaricata e renderizzata. Tutto questo contribuisce a degradare le prestazioni dell'applicazione e fornisce all'utente una pessima \textit{user experience}. Grazie a questa mixin, invece, la navigazione tra le varie schermate non comporta ad alcun \textit{reload}. Tutte le schermate che sono già state inizializzate, perché l'utente le ha già visionate, vengono mantenute attive in \textit{background}: nel momento in cui l'utente ritorna su una di queste schermate, il framework non fa altro che riprendere l'oggetto già istanziato e proporlo al livello di presentazione. Se l'applicazione non avesse integrato questa mixin, oltre ad avere dei problemi nell'esperienza d'uso, il problema più grave sarebbero stato quello di non fornire un servizio affidabile all'utente, ovvero, il monitoraggio dei dati. Infatti, senza questa mixin, ogni volta che l'utente ritornava su una schermata che aveva già visionato, la schermata doveva essere ricaricata. In quel frangente di tempo necessario per ricaricare e renderizzare nuovamente tutta la schermata, l'applicazione \textit{non visualizza alcun dato}. Quindi, l'applicazione non avrebbe fornito correttamente il servizio per cui era stata progettata. Per questa ragione, durante tutta la spiegazione relativa a questa classe, essa è stata più volte definita come \textit{fondamentale} per la corretta implementazione dell'applicazione.
+
+A livello di codice, \verb|AutomaticKeepAliveClientMixin| viene integrata nella classe come indicato a riga 2, ovvero, con la parola riservata \verb|with|. Questa mixin contiene soltanto un metodo, \verb|wantKeepAlive| (riga 4), necessario per informare il framework se mantenere attiva o meno la schermata. Inoltre, nel corpo del metodo \verb|build| della classe \verb|_NavigationPageState| deve essere aggiunto \verb|super.build(context)| \cite{keep_alive_mixin} (riga 8).
+
+
+\lstset{numbers=left, % vogliamo numerare le righr
+  numberstyle=\tiny, % i numeri sono piccoli
+  basicstyle=\ttfamily, % usiamo il carattere dattilografico
+  columns=fullflexible, % niente emulazioni di allineamento
+  backgroundcolor=\color{lightgray}, % colore di sfondo
+  language=Java, % linguaggio usato
+  }
+  \begin{lstlisting}
+class _NavigationPageState extends State<NavigationPage>
+    with AutomaticKeepAliveClientMixin<NavigationPage> {
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    return GridBox(
+      bloc: widget.navigationBloc,
+      themeHandler: widget.themeHandler,
+      initialData: Navigation(),
+    );
+  }
+}
+  \end{lstlisting}
+  
+  

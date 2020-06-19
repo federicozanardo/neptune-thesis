@@ -1,0 +1,59 @@
+\chapter{Classi ed interfacce in Dart}
+\label{cap:A}
+Una peculiarità di questo linguaggio è la definizione delle \textit{interfacce} \cite{implicit_interfaces}. Quando si va a definire una normale classe, questa può essere estesa o implementata da altre classi.
+Prendendo l'esempio fornito dalla documentazione ufficiale \cite{implicit_interfaces}:
+\begin{lstlisting}
+class Person {
+  final _name;
+
+  // Not in the interface, since this is a constructor.
+  Person(this._name);
+
+  // In the interface.
+  String greet(String who) => 'Hello, $who. I am $_name.';
+}
+
+class Impostor implements Person {
+  get _name => '';
+
+  String greet(String who) => 'Hi $who. Do you know who I am?';
+}
+\end{lstlisting}
+
+Come è possibile vedere, la classe \verb|Impostor| implementa la classe \verb|Person| e pertanto dovrà implementare tutti i metodi pubblici. Un discorso analogo può essere fatto anche tra \textit{classi astratte} ed interfacce. Si prenda esempio da un caso presente nell'applicazione realizzata:
+\begin{lstlisting}
+abstract class BaseModel {
+  Map<String, dynamic> toMap();
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+class Location extends BaseModel {
+  final String latitude;
+  final String longitude;
+
+  Location({this.latitude = "0", this.longitude = "0"});
+
+  @override
+  Map<String, dynamic> toMap() {
+    return null;
+  }
+}
+\end{lstlisting}
+
+Ma è possibile anche implementare la classe \verb|BaseModel|:
+\begin{lstlisting}
+class Location implements BaseModel {
+  final String latitude;
+  final String longitude;
+
+  Location({this.latitude = "0", this.longitude = "0"});
+
+  @override
+  Map<String, dynamic> toMap() {
+    return null;
+  }
+}
+\end{lstlisting}
+
+Dart definisce questo concetto come una \textit{definizione implicita} delle interfacce. Ogni classe definisce implicitamente un'interfaccia contenente tutti i membri dell'istanza della classe e di tutte le interfacce che implementa.

@@ -1,0 +1,188 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {chapter}{Introduzione}{v}{chapter*.1}% 
+\contentsline {chapter}{Elenco delle figure}{xi}{chapter*.3}% 
+\contentsline {chapter}{\numberline {1}Introduzione al contesto di applicazione del progetto}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Concetto base della regata}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Regata costiera}{1}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Barca a vela}{2}{section.1.3}% 
+\contentsline {chapter}{\numberline {2}Architettura hardware e software}{3}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Hardware}{3}{section.2.1}% 
+\contentsline {subsection}{\numberline {2.1.1}Premessa}{3}{subsection.2.1.1}% 
+\contentsline {subsection}{\numberline {2.1.2}Raspberry}{3}{subsection.2.1.2}% 
+\contentsline {subsection}{\numberline {2.1.3}Ricevitore GPS}{5}{subsection.2.1.3}% 
+\contentsline {section}{\numberline {2.2}Software}{5}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Modello architetturale}{5}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Funzionalit\IeC {\`a} implementate dal server}{6}{subsection.2.2.2}% 
+\contentsline {subsubsection}{Comunicazione con i sensori}{6}{section*.4}% 
+\contentsline {subsubsection}{Manipolazione dei dati raccolti}{7}{section*.5}% 
+\contentsline {subsection}{\numberline {2.2.3}Argos}{7}{subsection.2.2.3}% 
+\contentsline {subsubsection}{Prima versione}{7}{section*.6}% 
+\contentsline {subsubsection}{Seconda versione}{7}{section*.7}% 
+\contentsline {subsubsection}{Dati rilevati dai sensori ed elaborati dal server}{8}{section*.8}% 
+\contentsline {subsection}{\numberline {2.2.4}Neptune}{9}{subsection.2.2.4}% 
+\contentsline {subsubsection}{Premessa}{9}{section*.9}% 
+\contentsline {subsubsection}{Obiettivo dell'applicazione}{10}{section*.10}% 
+\contentsline {subsubsection}{Applicazione web}{10}{section*.11}% 
+\contentsline {subsubsection}{Applicazione Android}{11}{section*.12}% 
+\contentsline {chapter}{\numberline {3}Classificazione delle applicazioni mobili}{13}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Introduzione}{13}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Native}{13}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Web App}{15}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Progressive Web App}{16}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Hybrid}{16}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Cross-Platform}{17}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Considerazioni}{19}{section.3.7}% 
+\contentsline {section}{\numberline {3.8}Criteri per la scelta dell'approccio di sviluppo}{20}{section.3.8}% 
+\contentsline {subsection}{\numberline {3.8.1}Risorse economiche a disposizione}{20}{subsection.3.8.1}% 
+\contentsline {subsection}{\numberline {3.8.2}Time-to-market e copertura del mercato (reach)}{21}{subsection.3.8.2}% 
+\contentsline {subsection}{\numberline {3.8.3}Performance dell'applicazione}{21}{subsection.3.8.3}% 
+\contentsline {subsection}{\numberline {3.8.4}User Experience e interfaccia grafica}{21}{subsection.3.8.4}% 
+\contentsline {subsection}{\numberline {3.8.5}Funzionalit\IeC {\`a}}{22}{subsection.3.8.5}% 
+\contentsline {section}{\numberline {3.9}Motivazione della scelta di un framework cross-platform}{22}{section.3.9}% 
+\contentsline {chapter}{\numberline {4}Dart}{23}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Introduzione al linguaggio}{23}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Paradigmi}{24}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}Programmazione reattiva}{24}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}Vantaggi e svantaggi della programmazione reattiva}{26}{subsection.4.2.2}% 
+\contentsline {section}{\numberline {4.3}Compilazione ed esecuzione}{26}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Criteri per la classificazione dei linguaggi di programmazione}{26}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Tipizzazione}{28}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.3}Compilazione ed esecuzione del codice}{29}{subsection.4.3.3}% 
+\contentsline {subsubsection}{Ahead Of Time (AOT)}{29}{section*.13}% 
+\contentsline {subsubsection}{Just In Time (JIT)}{30}{section*.14}% 
+\contentsline {subsection}{\numberline {4.3.4}Compilatori ed interpreti}{30}{subsection.4.3.4}% 
+\contentsline {subsection}{\numberline {4.3.5}DartVM}{31}{subsection.4.3.5}% 
+\contentsline {section}{\numberline {4.4}Principali caratteristiche}{31}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Isolate}{31}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Event Loop}{32}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}Future}{33}{subsection.4.4.3}% 
+\contentsline {subsection}{\numberline {4.4.4}Async e await}{33}{subsection.4.4.4}% 
+\contentsline {subsection}{\numberline {4.4.5}Stream}{34}{subsection.4.4.5}% 
+\contentsline {subsection}{\numberline {4.4.6}dynamic}{34}{subsection.4.4.6}% 
+\contentsline {subsection}{\numberline {4.4.7}Gestore dei pacchetti}{35}{subsection.4.4.7}% 
+\contentsline {section}{\numberline {4.5}Familiarit\IeC {\`a} della sintassi}{35}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Confronto con JavaScript}{36}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.6.1}Introduzione a JavaScript}{36}{subsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.6.2}Confronto}{37}{subsection.4.6.2}% 
+\contentsline {subsubsection}{Class-based e prototype-based}{37}{section*.15}% 
+\contentsline {subsubsection}{Curva di apprendimento}{37}{section*.16}% 
+\contentsline {subsubsection}{Semplicit\IeC {\`a} d'uso del linguaggio}{37}{section*.17}% 
+\contentsline {subsubsection}{Compilazione ed interpretazione}{37}{section*.18}% 
+\contentsline {subsubsection}{Web e mobile}{38}{section*.19}% 
+\contentsline {chapter}{\numberline {5}Flutter}{39}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Introduzione}{39}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Struttura del framework}{39}{section.5.2}% 
+\contentsline {subsection}{\numberline {5.2.1}Skia}{40}{subsection.5.2.1}% 
+\contentsline {section}{\numberline {5.3}Widget}{41}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Classificazione dei Widget}{42}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Costruzione dei Widget}{43}{subsection.5.3.2}% 
+\contentsline {section}{\numberline {5.4}State Management}{44}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}setState}{45}{subsection.5.4.1}% 
+\contentsline {subsection}{\numberline {5.4.2}InheritedWidget}{45}{subsection.5.4.2}% 
+\contentsline {subsection}{\numberline {5.4.3}Scoped Model}{46}{subsection.5.4.3}% 
+\contentsline {subsection}{\numberline {5.4.4}Redux}{46}{subsection.5.4.4}% 
+\contentsline {subsection}{\numberline {5.4.5}Provider e BLoC}{47}{subsection.5.4.5}% 
+\contentsline {section}{\numberline {5.5}Hot Reload}{47}{section.5.5}% 
+\contentsline {section}{\numberline {5.6}Fuchsia}{47}{section.5.6}% 
+\contentsline {section}{\numberline {5.7}Ciclo di vita delle applicazioni}{49}{section.5.7}% 
+\contentsline {section}{\numberline {5.8}Pacchetti}{49}{section.5.8}% 
+\contentsline {section}{\numberline {5.9}Vantaggi e svantaggi di Flutter}{50}{section.5.9}% 
+\contentsline {section}{\numberline {5.10}Confronto con React Native}{51}{section.5.10}% 
+\contentsline {subsection}{\numberline {5.10.1}Introduzione a React Native}{51}{subsection.5.10.1}% 
+\contentsline {subsection}{\numberline {5.10.2}Confronto}{52}{subsection.5.10.2}% 
+\contentsline {subsubsection}{Linguaggio di programmazione utilizzato}{52}{section*.20}% 
+\contentsline {subsubsection}{Architettura}{52}{section*.21}% 
+\contentsline {subsubsection}{Installazione}{52}{section*.22}% 
+\contentsline {subsubsection}{Setup e configurazione del progetto}{53}{section*.23}% 
+\contentsline {subsubsection}{Componenti grafici e API di sviluppo}{53}{section*.24}% 
+\contentsline {subsubsection}{Supporto della community}{53}{section*.25}% 
+\contentsline {subsubsection}{Testing}{54}{section*.26}% 
+\contentsline {chapter}{\numberline {6}Sviluppo dell'applicazione}{55}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Requisiti}{55}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Architetture utilizzate}{56}{section.6.2}% 
+\contentsline {subsection}{\numberline {6.2.1}Introduzione}{56}{subsection.6.2.1}% 
+\contentsline {subsection}{\numberline {6.2.2}Scelta dell'architettura}{56}{subsection.6.2.2}% 
+\contentsline {subsection}{\numberline {6.2.3}Provider}{57}{subsection.6.2.3}% 
+\contentsline {subsubsection}{Strutturazione del Provider}{57}{section*.27}% 
+\contentsline {subsubsection}{Recuperare ed utilizzare i valori dal Provider}{58}{section*.28}% 
+\contentsline {subsubsection}{Aggiornamento dello stato}{61}{section*.29}% 
+\contentsline {subsection}{\numberline {6.2.4}BLoC}{62}{subsection.6.2.4}% 
+\contentsline {subsubsection}{Strutturazione del BLoC}{62}{section*.30}% 
+\contentsline {subsubsection}{Integrazione del pattern Provider}{63}{section*.31}% 
+\contentsline {subsection}{\numberline {6.2.5}Motivazioni della scelta}{64}{subsection.6.2.5}% 
+\contentsline {section}{\numberline {6.3}Architettura proposta}{65}{section.6.3}% 
+\contentsline {subsection}{\numberline {6.3.1}Problematiche del pattern BLoC}{65}{subsection.6.3.1}% 
+\contentsline {subsection}{\numberline {6.3.2}Introduzione del Repository pattern}{65}{subsection.6.3.2}% 
+\contentsline {subsection}{\numberline {6.3.3}Architettura modificata}{66}{subsection.6.3.3}% 
+\contentsline {section}{\numberline {6.4}Architettura implementata}{67}{section.6.4}% 
+\contentsline {subsection}{\numberline {6.4.1}Descrizione}{67}{subsection.6.4.1}% 
+\contentsline {subsection}{\numberline {6.4.2}Integrazione del Repository}{68}{subsection.6.4.2}% 
+\contentsline {section}{\numberline {6.5}Descrizione dettagliata dell'architettura implementata}{69}{section.6.5}% 
+\contentsline {subsection}{\numberline {6.5.1}Organizzazione delle classi e dei package}{69}{subsection.6.5.1}% 
+\contentsline {subsection}{\numberline {6.5.2}Modelli}{72}{subsection.6.5.2}% 
+\contentsline {subsubsection}{Acronyms}{72}{section*.32}% 
+\contentsline {subsubsection}{RepositoryDataModel}{73}{section*.33}% 
+\contentsline {subsubsection}{BaseModel}{73}{section*.34}% 
+\contentsline {subsubsection}{Dashboard}{74}{section*.35}% 
+\contentsline {subsubsection}{Cache}{75}{section*.36}% 
+\contentsline {subsubsection}{ServerParameters}{76}{section*.37}% 
+\contentsline {subsubsection}{ServerSettingsFile}{76}{section*.38}% 
+\contentsline {subsubsection}{ServerSettings}{77}{section*.39}% 
+\contentsline {subsection}{\numberline {6.5.3}Socket}{77}{subsection.6.5.3}% 
+\contentsline {subsubsection}{Metodo getData()}{77}{section*.40}% 
+\contentsline {subsection}{\numberline {6.5.4}Repository}{78}{subsection.6.5.4}% 
+\contentsline {subsubsection}{Metodo start()}{79}{section*.41}% 
+\contentsline {subsubsection}{Metodo \_getDataFromSocket()}{81}{section*.42}% 
+\contentsline {subsubsection}{Metodo stop()}{81}{section*.43}% 
+\contentsline {subsubsection}{Metodo dispose()}{82}{section*.44}% 
+\contentsline {subsection}{\numberline {6.5.5}BLoC}{82}{subsection.6.5.5}% 
+\contentsline {subsubsection}{Classe astratta}{82}{section*.45}% 
+\contentsline {subsubsection}{NavigationBloc}{84}{section*.46}% 
+\contentsline {subsubsection}{DashboardWidgetBloc}{84}{section*.47}% 
+\contentsline {subsection}{\numberline {6.5.6}View}{85}{subsection.6.5.6}% 
+\contentsline {subsubsection}{Navigation}{85}{section*.48}% 
+\contentsline {subsubsection}{GPS e Wind}{89}{section*.49}% 
+\contentsline {subsubsection}{Dashboard}{90}{section*.50}% 
+\contentsline {subsubsection}{Settings}{94}{section*.51}% 
+\contentsline {subsubsection}{Cache}{98}{section*.52}% 
+\contentsline {subsubsection}{Server}{100}{section*.53}% 
+\contentsline {subsubsection}{Temi}{105}{section*.54}% 
+\contentsline {subsection}{\numberline {6.5.7}Widget comuni}{107}{subsection.6.5.7}% 
+\contentsline {subsubsection}{GridBox}{107}{section*.55}% 
+\contentsline {subsubsection}{Location}{108}{section*.56}% 
+\contentsline {subsubsection}{Page App Bar}{110}{section*.57}% 
+\contentsline {subsubsection}{Sensor Data App Bar}{110}{section*.58}% 
+\contentsline {subsection}{\numberline {6.5.8}Palette di colori}{111}{subsection.6.5.8}% 
+\contentsline {subsection}{\numberline {6.5.9}Temi}{111}{subsection.6.5.9}% 
+\contentsline {subsubsection}{Themes}{111}{section*.59}% 
+\contentsline {subsubsection}{CustomTheme}{112}{section*.60}% 
+\contentsline {subsubsection}{DefaultTheme e HighContrastTheme}{112}{section*.61}% 
+\contentsline {subsubsection}{ThemeHandler}{112}{section*.62}% 
+\contentsline {subsection}{\numberline {6.5.10}Main}{113}{subsection.6.5.10}% 
+\contentsline {section}{\numberline {6.6}Motivazioni delle scelte grafiche implementate}{114}{section.6.6}% 
+\contentsline {subsection}{\numberline {6.6.1}Concetti generali}{114}{subsection.6.6.1}% 
+\contentsline {subsection}{\numberline {6.6.2}Scelte stilistiche attuate}{115}{subsection.6.6.2}% 
+\contentsline {section}{\numberline {6.7}Ottimizzazioni}{116}{section.6.7}% 
+\contentsline {subsection}{\numberline {6.7.1}Provider e StreamBuilder}{116}{subsection.6.7.1}% 
+\contentsline {subsection}{\numberline {6.7.2}Annidamento degli StreamBuilder}{116}{subsection.6.7.2}% 
+\contentsline {subsection}{\numberline {6.7.3}Ottimizzazioni grafiche}{117}{subsection.6.7.3}% 
+\contentsline {chapter}{\numberline {7}Conclusioni}{121}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}Sviluppi futuri}{121}{section.7.1}% 
+\contentsline {subsection}{\numberline {7.1.1}Notifiche push}{121}{subsection.7.1.1}% 
+\contentsline {subsection}{\numberline {7.1.2}Grafici e schermate dedicate ai dati}{122}{subsection.7.1.2}% 
+\contentsline {subsection}{\numberline {7.1.3}Aggiunta di componenti grafiche}{124}{subsection.7.1.3}% 
+\contentsline {subsection}{\numberline {7.1.4}Introduzione di nuovi temi}{124}{subsection.7.1.4}% 
+\contentsline {subsection}{\numberline {7.1.5}Autenticazione degli utenti}{124}{subsection.7.1.5}% 
+\contentsline {section}{\numberline {7.2}Considerazioni sull'approccio cross-platform}{124}{section.7.2}% 
+\contentsline {section}{\numberline {7.3}Considerazioni su Dart}{125}{section.7.3}% 
+\contentsline {section}{\numberline {7.4}Considerazioni su Flutter}{126}{section.7.4}% 
+\contentsline {section}{\numberline {7.5}Considerazioni personali}{127}{section.7.5}% 
+\contentsline {subsection}{\numberline {7.5.1}Scelta del framework}{127}{subsection.7.5.1}% 
+\contentsline {subsection}{\numberline {7.5.2}Progettazione e sviluppo dell'applicazione}{128}{subsection.7.5.2}% 
+\contentsline {chapter}{\numberline {A}Classi ed interfacce in Dart}{129}{appendix.Alph1}% 
+\contentsline {chapter}{\numberline {B}AutomaticKeepAliveClientMixin}{131}{appendix.Alph2}% 
+\contentsline {chapter}{Bibliografia}{135}{appendix*.63}% 
+\babel@toc {english}{}
+\babel@toc {italian}{}
+\babel@toc {italian}{}
