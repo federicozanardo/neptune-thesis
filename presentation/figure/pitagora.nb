@@ -1,0 +1,720 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24848,        710]
+NotebookOptionsPosition[     23888,        677]
+NotebookOutlinePosition[     24523,        698]
+CellTagsIndexPosition[     24480,        695]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"internoTriangolo", "=", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"Yellow", ",", 
+      RowBox[{"Polygon", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"4", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "3"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}]}], "}"}], "]"}]}], "}"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bordoTriangolo", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Thickness", "[", ".008", "]"}], ",", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"4", ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "3"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}]}], "}"}], "]"}]}], "}"}]}], 
+  ";"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cateti", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Red", ",", 
+       RowBox[{"Polygon", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "3"}], "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Green", ",", 
+       RowBox[{"Polygon", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "4"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"4", ",", 
+            RowBox[{"-", "4"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"4", ",", "0"}], "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "3"}], "}"}]}], "}"}], "]"}], ",", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"-", "4"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"4", ",", 
+          RowBox[{"-", "4"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"4", ",", "0"}], "}"}]}], "}"}], "]"}]}], "}"}]}], 
+  ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ipotenusa", "=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"t", "=", 
+        RowBox[{"ArcTan", "[", 
+         RowBox[{"3", "/", "4"}], "]"}]}], ",", "trasformazioneAffine"}], 
+      "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"trasformazioneAffine", "[", "punto_List", "]"}], ":=", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "3"}], "}"}], "+", 
+        RowBox[{
+         RowBox[{"RotationMatrix", "[", 
+          RowBox[{"-", "t"}], "]"}], ".", "punto"}]}]}], ";", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Red", ",", 
+          RowBox[{"Polygon", "[", 
+           RowBox[{"Map", "[", 
+            RowBox[{"trasformazioneAffine", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"3", 
+                  RowBox[{"Cos", "[", 
+                   RowBox[{"ArcTan", "[", 
+                    RowBox[{"4", "/", "3"}], "]"}], "]"}]}], ",", "0"}], 
+                "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"3", 
+                  RowBox[{"Cos", "[", 
+                   RowBox[{"ArcTan", "[", 
+                    RowBox[{"4", "/", "3"}], "]"}], "]"}]}], ",", "5"}], 
+                "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "5"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], "]"}], "]"}]}], 
+         "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Green", ",", 
+          RowBox[{"Polygon", "[", 
+           RowBox[{"Map", "[", 
+            RowBox[{"trasformazioneAffine", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"3", 
+                  RowBox[{"Cos", "[", 
+                   RowBox[{"ArcTan", "[", 
+                    RowBox[{"4", "/", "3"}], "]"}], "]"}]}], ",", "0"}], 
+                "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"3", 
+                  RowBox[{"Cos", "[", 
+                   RowBox[{"ArcTan", "[", 
+                    RowBox[{"4", "/", "3"}], "]"}], "]"}]}], ",", "5"}], 
+                "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"5", ",", "5"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"5", ",", "0"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"3", 
+                  RowBox[{"Cos", "[", 
+                   RowBox[{"ArcTan", "[", 
+                    RowBox[{"4", "/", "3"}], "]"}], "]"}]}], ",", "0"}], 
+                "}"}]}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"Map", "[", 
+          RowBox[{"trasformazioneAffine", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"3", 
+                RowBox[{"Cos", "[", 
+                 RowBox[{"ArcTan", "[", 
+                  RowBox[{"4", "/", "3"}], "]"}], "]"}]}], ",", 
+               RowBox[{
+                RowBox[{"-", "12"}], "/", "5"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"3", 
+                RowBox[{"Cos", "[", 
+                 RowBox[{"ArcTan", "[", 
+                  RowBox[{"4", "/", "3"}], "]"}], "]"}]}], ",", "5"}], "}"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "5"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], "]"}], "]"}], ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"Map", "[", 
+          RowBox[{"trasformazioneAffine", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"3", 
+                RowBox[{"Cos", "[", 
+                 RowBox[{"ArcTan", "[", 
+                  RowBox[{"4", "/", "3"}], "]"}], "]"}]}], ",", "0"}], "}"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"3", 
+                RowBox[{"Cos", "[", 
+                 RowBox[{"ArcTan", "[", 
+                  RowBox[{"4", "/", "3"}], "]"}], "]"}]}], ",", "5"}], "}"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{"5", ",", "5"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"5", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"3", 
+                RowBox[{"Cos", "[", 
+                 RowBox[{"ArcTan", "[", 
+                  RowBox[{"4", "/", "3"}], "]"}], "]"}]}], ",", "0"}], 
+              "}"}]}], "}"}]}], "]"}], "]"}]}], "}"}]}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6771562552600403`*^9, 3.677156255446328*^9}, 
+   3.677156304215486*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pitagora3", "=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "internoTriangolo", ",", "cateti", ",", "ipotenusa", ",", 
+      "bordoTriangolo"}], "}"}], ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "Automatic"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.677156226015926*^9, 3.677156233775661*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 1, 0], PolygonBox[{{0, 0}, {4, 0}, {0, 3}, {0, 0}}]}, {
+    {RGBColor[1, 0, 0], PolygonBox[{{0, 0}, {-3, 0}, {-3, 3}, {0, 3}}]}, 
+    {RGBColor[0, 1, 0], PolygonBox[{{0, 0}, {0, -4}, {4, -4}, {4, 0}}]}, 
+    LineBox[{{0, 0}, {-3, 0}, {-3, 3}, {0, 3}}], 
+    LineBox[{{0, 0}, {0, -4}, {4, -4}, {4, 0}}]}, {
+    {RGBColor[1, 0, 0], 
+     PolygonBox[
+      NCache[{{0, 3}, {Rational[36, 25], Rational[48, 25]}, {
+        Rational[111, 25], Rational[148, 25]}, {3, 7}, {0, 3}}, {{0, 3}, {
+        1.44, 1.92}, {4.44, 5.92}, {3, 7}, {0, 3}}]]}, 
+    {RGBColor[0, 1, 0], 
+     PolygonBox[
+      NCache[{{Rational[36, 25], Rational[48, 25]}, {
+        Rational[111, 25], Rational[148, 25]}, {7, 4}, {4, 0}, {
+        Rational[36, 25], Rational[48, 25]}}, {{1.44, 1.92}, {4.44, 5.92}, {7,
+         4}, {4, 0}, {1.44, 1.92}}]]}, 
+    LineBox[NCache[{{0, 0}, {Rational[111, 25], Rational[148, 25]}, {3, 7}, {
+       0, 3}}, {{0, 0}, {4.44, 5.92}, {3, 7}, {0, 3}}]], 
+    LineBox[NCache[{{Rational[36, 25], Rational[48, 25]}, {
+       Rational[111, 25], Rational[148, 25]}, {7, 4}, {4, 0}, {
+       Rational[36, 25], Rational[48, 25]}}, {{1.44, 1.92}, {4.44, 5.92}, {7, 
+       4}, {4, 0}, {1.44, 1.92}}]]}, 
+   {Thickness[0.008], LineBox[{{0, 0}, {4, 0}, {0, 3}, {0, 0}}]}},
+  AspectRatio->Automatic]], "Output",
+ CellChangeTimes->{{3.677156245875168*^9, 3.677156308009861*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pitagora1", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{"{", 
+      RowBox[{"internoTriangolo", ",", "bordoTriangolo"}], "}"}], "]"}], ",", 
+    
+    RowBox[{"Sequence", "@@", 
+     RowBox[{"AbsoluteOptions", "[", "pitagora3", "]"}]}]}], "]"}]}]], "Input",\
+
+ CellChangeTimes->{3.677156317015974*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 1, 0], PolygonBox[{{0, 0}, {4, 0}, {0, 3}, {0, 0}}]}, 
+   {Thickness[0.008], LineBox[{{0, 0}, {4, 0}, {0, 3}, {0, 0}}]}},
+  AlignmentPoint->Center,
+  AspectRatio->1.1,
+  Axes->{False, False},
+  AxesLabel->None,
+  AxesOrigin->{0., 0.},
+  AxesStyle->{None, None},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction->Identity,
+  Epilog->{},
+  FormatType->TraditionalForm,
+  Frame->{False, False, False, False},
+  FrameLabel->None,
+  FrameStyle->{{}, {}, {}, {}},
+  FrameTicks->{None, None, None, None},
+  FrameTicksStyle->{},
+  GridLines->{{}, {}},
+  GridLinesStyle->{},
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->{{-3., 7.}, {-4., 7.}},
+  PlotRangeClipping->False,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotateLabel->True,
+  Ticks->{{{-2., 
+      FormBox[
+       RowBox[{"-", "2.`"}], TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {0., 
+      FormBox["0.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {2., 
+      FormBox["2.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {4., 
+      FormBox["4.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {6., 
+      FormBox["6.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {-1.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-1., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-0.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {0.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {1., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {1.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {2.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {3., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {3.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {4.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {5., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {5.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-2.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {6.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}}, {{-4., 
+      FormBox[
+       RowBox[{"-", "4.`"}], TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {-2., 
+      FormBox[
+       RowBox[{"-", "2.`"}], TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {0., 
+      FormBox["0.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {2., 
+      FormBox["2.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {4., 
+      FormBox["4.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {6., 
+      FormBox["6.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {-3.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-3., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-2.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-1.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-1., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-0.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {0.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {1., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {1.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {2.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {3., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {3.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {4.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {5., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {5.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {6.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}}},
+  TicksStyle->{}]], "Output",
+ CellChangeTimes->{3.677156317476527*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pitagora2", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{"{", 
+      RowBox[{"internoTriangolo", ",", "cateti", ",", "bordoTriangolo"}], 
+      "}"}], "]"}], ",", 
+    RowBox[{"Sequence", "@@", 
+     RowBox[{"AbsoluteOptions", "[", "pitagora3", "]"}]}]}], "]"}]}]], "Input",\
+
+ CellChangeTimes->{3.677156320022039*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 1, 0], PolygonBox[{{0, 0}, {4, 0}, {0, 3}, {0, 0}}]}, {
+    {RGBColor[1, 0, 0], PolygonBox[{{0, 0}, {-3, 0}, {-3, 3}, {0, 3}}]}, 
+    {RGBColor[0, 1, 0], PolygonBox[{{0, 0}, {0, -4}, {4, -4}, {4, 0}}]}, 
+    LineBox[{{0, 0}, {-3, 0}, {-3, 3}, {0, 3}}], 
+    LineBox[{{0, 0}, {0, -4}, {4, -4}, {4, 0}}]}, 
+   {Thickness[0.008], LineBox[{{0, 0}, {4, 0}, {0, 3}, {0, 0}}]}},
+  AlignmentPoint->Center,
+  AspectRatio->1.1,
+  Axes->{False, False},
+  AxesLabel->None,
+  AxesOrigin->{0., 0.},
+  AxesStyle->{None, None},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction->Identity,
+  Epilog->{},
+  FormatType->TraditionalForm,
+  Frame->{False, False, False, False},
+  FrameLabel->None,
+  FrameStyle->{{}, {}, {}, {}},
+  FrameTicks->{None, None, None, None},
+  FrameTicksStyle->{},
+  GridLines->{{}, {}},
+  GridLinesStyle->{},
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->{{-3., 7.}, {-4., 7.}},
+  PlotRangeClipping->False,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotateLabel->True,
+  Ticks->{{{-2., 
+      FormBox[
+       RowBox[{"-", "2.`"}], TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {0., 
+      FormBox["0.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {2., 
+      FormBox["2.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {4., 
+      FormBox["4.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {6., 
+      FormBox["6.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {-1.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-1., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-0.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {0.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {1., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {1.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {2.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {3., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {3.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {4.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {5., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {5.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-2.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {6.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}}, {{-4., 
+      FormBox[
+       RowBox[{"-", "4.`"}], TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {-2., 
+      FormBox[
+       RowBox[{"-", "2.`"}], TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {0., 
+      FormBox["0.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {2., 
+      FormBox["2.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {4., 
+      FormBox["4.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {6., 
+      FormBox["6.`", TraditionalForm], {0.00625, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.25]}}, {-3.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-3., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-2.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-1.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-1., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {-0.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {0.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {1., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {1.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {2.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {3., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {3.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {4.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {5., 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {5.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}, {6.5, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       GrayLevel[0.], 
+       AbsoluteThickness[0.125]}}}},
+  TicksStyle->{}]], "Output",
+ CellChangeTimes->{3.677156320432536*^9}]
+}, Open  ]]
+},
+WindowSize->{580, 639},
+WindowMargins->{{Automatic, 70}, {39, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
+StyleDefinitions->"Default.nb",
+MacintoshSystemPageSetup -> \
+"00<0001804P000000ad2<?oYonl3<`920dL5N`?P0080001804P000000]P2:001\n\
+0000I00000400`<30?l00BL?00400@00000000000000060801T1T00000008000\n\
+00000000004000000000000000000000"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1046, 34, 80, "Input"],
+Cell[1607, 56, 1902, 61, 80, "Input"],
+Cell[3512, 119, 5062, 138, 267, "Input"],
+Cell[CellGroupData[{
+Cell[8599, 261, 356, 9, 63, "Input"],
+Cell[8958, 272, 1413, 26, 409, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10408, 303, 365, 11, 63, "Input"],
+Cell[10776, 316, 6212, 168, 411, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17025, 489, 382, 11, 63, "Input"],
+Cell[17410, 502, 6462, 172, 411, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

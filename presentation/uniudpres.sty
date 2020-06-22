@@ -1,0 +1,292 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{uniudpres}[2008/04/01 pdf slideshow presentation for a Udine University thesis; needs graphics file polloPallido2 and pollo; written by Gianluca Gorni]
+\RequirePackage{ifthen}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage{soul}
+\RequirePackage{type1cm}
+\RequirePackage[marsdefs,texpower,cm]{marslide}
+\RequirePackage{nameref}
+\RequirePackage{multicol}
+
+\hypersetup{bookmarksopenlevel=2,
+pdfpagelayout=SinglePage,
+pdfpagemode=FullScreen,
+pdftitle=Presentazione della Tesi,
+pdfauthor=Tesista,
+pdfsubject=Modello di presentazione di Tesi al computer,
+pdfkeywords=LaTeX pdf presentazione tesi laurea}
+
+\geometry{reset,
+includefoot,includehead,
+paperheight=614.295truept,
+paperwidth=794.96999truept,
+textwidth=722.96999truept,
+textheight=516.295truept,
+headheight=78.0truept,
+headsep=20pt,
+voffset=-9pt,
+%textheight=5.5 truein,
+%textwidth=11.0 truein,
+left=36pt,
+right=36pt,
+bottom=0pt,
+footskip=0pt}
+
+\newcommand{\@facolta}{Scienze Matematiche, Fisiche e Naturali}
+\newcommand{\@corsodilaurea}{?}
+\newcommand{\@corsodilaureatriennale}{?}
+\newcommand{\@corsodilaureaspecialistica}{?}
+\newcommand{\@triennaleOspecialistica}{?}
+\newcommand{\@titolo}{Senza Titolo}
+\newcommand{\@titoloMaiuscolo}{\uppercase{Senza Titolo}}
+\newcommand{\@annoaccademico}{?}
+\newcommand{\@relatore}{?}
+\newcommand{\@correlatore}{?}
+\newcommand{\@laureando}{?}
+\newcommand{\@laureanda}{?}
+\newcommand{\@autore}{}
+\newcommand{\@laureandoOlaureanda}{?}
+\newcommand{\@dedica}{?}
+
+\newcommand{\facolta}[1]{%
+  \renewcommand{\@facolta}{#1}}
+\newcommand{\corsodilaurea}[1]{%
+  \renewcommand{\@corsodilaurea}{#1}%
+  \renewcommand{\@triennaleOspecialistica}{\ignorespaces}}
+\newcommand{\corsodilaureatriennale}[1]{%
+  \renewcommand{\@corsodilaurea}{#1}%
+  \renewcommand{\@triennaleOspecialistica}{Triennale }}
+\newcommand{\corsodilaureaspecialistica}[1]{%
+  \renewcommand{\@corsodilaurea}{#1}%
+  \renewcommand{\@triennaleOspecialistica}{Specialistica }}
+\newcommand{\titolo}[1]{%
+  \renewcommand{\@titolo}{#1}%
+  \renewcommand{\@titoloMaiuscolo}{\uppercase{#1}}}
+\renewcommand{\title}[1]{\titolo{#1}}
+\newcommand{\annoaccademico}[1]{%
+  \renewcommand{\@annoaccademico}{#1}}
+\newcommand{\relatore}[2][Prof.]{%
+  \renewcommand{\@relatore}{#1 \uppercase{#2}}}
+\newcommand{\correlatore}[2][Prof.]{%
+  \renewcommand{\@correlatore}{#1 \uppercase{#2}}}
+\newcommand{\laureando}[1]{%
+  \renewcommand{\@laureando}{\uppercase{#1}}%
+  \renewcommand{\@autore}{\uppercase{#1}}%
+  \renewcommand{\@laureandoOlaureanda}{Laureando}}
+\newcommand{\laureanda}[1]{%
+  \renewcommand{\@laureanda}{\uppercase{#1}}%
+  \renewcommand{\@autore}{\uppercase{#1}}%
+  \renewcommand{\@laureandoOlaureanda}{Laureanda}}
+\newcommand{\dedica}[1]{%
+  \renewcommand{\@dedica}{#1}}
+\newcommand{\data}[1]{\date{#1}}
+
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}%
+  \cleardoublepage}}
+
+\def\mylogo{\includegraphics[width=3cm]{pollo}}
+\let\LeftLogo\mylogo
+\let\EndLogoOne\mylogo
+\let\EndLogoTwo\null
+\def\uduniv{\raise 16pt\hbox{\footnotesize\sf \bfseries %
+           \textcolor{\titlecolor}{Universit\`{a} di Udine}}}
+\let\RightLogo\uduniv
+
+% bottoni per avanzare le pagine:
+\newcommand{\avanti}{%\Acrobatmenu{NextPage}{$\triangleright$}
+}
+\newcommand{\indietro}{%\Acrobatmenu{PrevPage}{$\triangleleft$}
+}
+
+%%%%%%%%% RIDEFINIRE myheadings
+
+\def\ps@myheadings{\def\@oddfoot{}%
+  \def\@evenfoot{}\def\@evenhead{%
+   \ifnum\value{page}=1
+       \bannerHeading{\bannerlogo}\hfil¥¥¥
+   \else
+      \bannerHeading{\rightmark}\hfil
+   \fi}%
+\def\@oddhead {%
+   \ifnum\value{page}=1
+       \bannerHeading{\bannerlogo}\hfil
+   \else
+      \bannerHeading{\leftmark}\hfil
+   \fi}%
+     \let\@mkboth\@gobbletwo
+     \let\sectionmark\@gobble
+     \let\subsectionmark\@gobble}
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %                                   %
+    %  Formattazione dell'intestazione  %
+    %  della presentazione              %
+    %                                   %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\maketitle}{\thispagestyle{empty}%
+    \null\vskip-\headsep\vskip-\headheight\hrule height0pt
+  \vbox to0pt{\begin{flushright}{\huge\avanti
+                 }\end{flushright}\vss}%
+  \vbox to\textheight{
+    \begin{center}
+    \vbox to0pt{\vbox to\paperheight%
+      {\vskip30pt
+      \vfill\includegraphics{polloPallido2}\vfill
+      \begin{center}
+      \frontpagesubtitle{\small{\@date}}\end{center}
+      \vspace{30pt}}\vss}%
+    \vspace{-.5\headheight}
+    \frontpagesubtitle{\normalsize{
+    {\renewcommand{\\}{\cr}
+   \halign{\hbox to\textwidth{\strut\hfil##\hfil}\cr
+    Tesi di Laurea \@triennaleOspecialistica in\cr
+    \@corsodilaurea\cr}}}}
+    \vfill
+      \frontpagetitle{%
+     {\renewcommand{\\}{\cr}
+   \halign{\hbox to\textwidth{\strut\hfil##\hfil}\cr
+    \@titoloMaiuscolo\cr}}}
+    \vfill\vfill
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}l}
+    Relatore:&\@laureandoOlaureanda:\\
+     \color{black}\vtop{\halign{\strut\hfil##\hfil\cr
+       \@relatore\cr}}&%
+     \color{black}\vtop{\halign{\strut\hfil##\hfil\cr
+       \@autore\cr}}%
+  \end{tabular*}\end{center}
+  \ifthenelse{\equal{\@correlatore}{?}}{\vfill}%
+  {\color{black}
+   \begin{tabular}{l}
+    \noindent Correlatore:\\
+     \vtop{\halign{\strut\hfil##\hfil\cr
+        \@correlatore\cr}}\end{tabular}}%
+ }
+\newpage
+\ifthenelse{\equal{\@dedica}{?}}{}{%
+\pagestyle{empty}
+  \null\vskip-\headsep\vskip-\headheight\hrule height0pt
+  \begin{flushright}{\huge\indietro\ 
+            \avanti}\end{flushright}\vfil
+  \begin{Large}
+  \begin{flushright}
+    \@dedica
+  \end{flushright}
+  \end{Large}
+  \vfil\vfil\vfil\newpage}
+  \pagestyle{myheadings}}
+
+
+%%%%%%%% CAPITOLI
+
+\newcommand{\capitolo}[2][?]{\newpage
+  \refstepcounter{chapter}%
+  \addcontentsline{toc}{chapter}%
+    {\texorpdfstring{\textcolor{red}%
+       {\thechapter\ #1}}{\thechapter\ #1}}%
+    \thispagestyle{empty}%
+    \markbanner{}
+    \markboth{}{}%
+    \chaptermark{}
+    \null\vskip-\headsep\vskip-\headheight\hrule height0pt
+    \vbox to0pt{
+     \begin{flushright}{%
+       \huge\indietro
+       \ \avanti}\end{flushright}\vss}%
+    \vbox to\textheight{%
+    \begin{center}
+    \frontpagesubtitle{{\renewcommand{\\}{\cr}
+      \halign{\hbox to\textwidth{\strut\hfil##\hfil}\cr
+      \@titolo\cr}}}
+    \vfill
+    \frontpagesubtitle{Cap.\ \protect\thechapter}\medskip
+    \frontpagetitle{#2}
+    \end{center}
+    \vfill
+    \vbox to0pt{\frontpagelogos\vss}}
+    \newpage\pagestyle{myheadings}}
+
+\newcommand{\paginaefrecce}{{\large
+    \hbox{\strut%\Acrobatmenu{PrevPage}{%
+          %\textcolor{white}{$\triangleleft$}}}%
+          \ \protect\thepage\rlap{\ \strut
+      %\Acrobatmenu{NextPage}{\textcolor{white}{$\triangleright$}}
+      }}}}
+
+\newcommand{\capitoloSenzaFrontPage}[1]{\newpage
+  \markbanner{#1\hfill\paginaefrecce}%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}%
+    {\texorpdfstring{\numberline{#1}}{#1}}%
+%  \addtocounter{chapter}{-1}%
+  }
+
+\renewcommand{\chapter}{\secdef\capitolo\capitoloSenzaFrontPage}
+
+%%%%%%%% SEZIONI
+
+\newcommand{\pausaDopoTitolo}{\null\newframe}
+
+\newcommand{\sezione}[2][?]{\newpage
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{#1}%
+    {\markbanner{#2\hfill\paginaefrecce}}%
+    \sectionmark{}\pausaDopoTitolo}
+
+\newcommand{\sezioneNonIndicizzata}[1]{\newpage
+    {\markbanner{#1\hfill{\large{\indietro\ 
+          \protect\thepage\ \avanti}}}}%
+    \sectionmark{}\pausaDopoTitolo}
+
+\renewcommand{\section}{\secdef\sezione\sezioneNonIndicizzata}
+
+%%%%%%%% SOTTOSEZIONI
+
+\renewcommand{\subsection}[1]{\newpage
+  \refstepcounter{subsection}%
+  \addcontentsline{toc}{subsection}%
+    {#1}%
+    {\begin{center}\huge{#1}\end{center}}}
+
+%%%%%%%% INDICE
+
+\newcommand{\indicedoppiacolonna}{%
+  \setlength{\columnseprule}{2pt}%
+  \addtolength{\columnsep}{10pt}%
+    \chapter*{\contentsname}%
+    \begin{multicols}{2}\raggedright
+    \normalfont
+    \@starttoc{toc}\end{multicols}}
+
+%%%%%%%% FINALE
+
+\newcommand{\finelibro}{\newpage
+\thispagestyle{empty}%
+\markbanner{}%
+\null\vskip-\headsep\vskip-\headheight\hrule height0pt
+  \begin{flushright}{\huge\indietro}\end{flushright}
+\null\vfill\vspace{-110pt}
+\begin{center}
+  \frontpagetitle{Fine}
+  \bigskip\bigskip
+  \includegraphics[width=6cm]{pollo}\\
+  \bigskip\bigskip
+  \normalsize
+\end{center}\vfill\eject}
+
+\AtEndDocument{\finelibro}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% il comando \newframe e' come \newpage,
+% ma non avanza il numero di pagina.
+% Puo' servire per fare cambiamenti incrementali
+% a una pagina, quando \pause o \stepwise non
+% bastano:
+\newcommand{\newframe}{\newpage\addtocounter{page}{-1}}
+
+\newcommand{\ignorapause}{\renewcommand{\pause}{}\renewcommand{\pausaDopoTitolo}{}}
+
+
+\endinput
