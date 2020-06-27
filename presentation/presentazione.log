@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.5)  22 JUN 2020 13:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.5)  25 JUN 2020 11:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -632,7 +632,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-<./figure/polloPallido2.pdf, id=8, 406.51875pt x 406.51875pt>
+<./figure/polloPallido2.pdf, id=16, 406.51875pt x 406.51875pt>
 File: ./figure/polloPallido2.pdf Graphic file (type pdf)
 <use ./figure/polloPallido2.pdf>
 Package pdftex.def Info: ./figure/polloPallido2.pdf  used on input line 76.
@@ -659,35 +659,106 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <36> not available
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <18> not available
 (Font)              size <17.28> substituted on input line 90.
 
+<./figure/native_hybrid_web.png, id=33, 884.30376pt x 681.54625pt>
+File: ./figure/native_hybrid_web.png Graphic file (type png)
+<use ./figure/native_hybrid_web.png>
+Package pdftex.def Info: ./figure/native_hybrid_web.png  used on input line 101
+.
+(pdftex.def)             Requested size: 353.71524pt x 272.61366pt.
 pdfTeX warning (ext4): destination with the same identifier (name{slide.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.114 \end{document}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{firstpage.2}) has been already used, duplicate ignored
+l.106 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{firstpage.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.114 \end{document}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{page.2}) has been already used, duplicate ignored
+l.106 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.114 \end{document}
-                     [2]
-<./figure/pollo.pdf, id=31, 406.51875pt x 406.51875pt>
+l.106 \newpage
+               [2 <./figure/native_hybrid_web.png>] [3]
+LaTeX Font Info:    Calculating math sizes for size <32> on input line 116.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <32> not available
+(Font)              size <24.88> substituted on input line 116.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <22.3999> not available
+(Font)              size <20.74> substituted on input line 116.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 116.
+
+pdfTeX warning (ext4): destination with the same identifier (name{slide.3}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.122 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{firstpage.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.122 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{page.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.122 \newpage
+               [3]
+<./figure/architettura_implementata.png, id=52, 815.045pt x 858.20625pt>
+File: ./figure/architettura_implementata.png Graphic file (type png)
+<use ./figure/architettura_implementata.png>
+Package pdftex.def Info: ./figure/architettura_implementata.png  used on input 
+line 145.
+(pdftex.def)             Requested size: 326.01222pt x 343.27641pt.
+ [4 <./figure/architettura_implementata.png>] [5]pdfTeX warning (ext4): destina
+tion with the same identifier (name{slide.5}) has been already used, duplicate 
+ignored
+<to be read again> 
+                   \relax 
+l.168 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{firstpage.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.168 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{page.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.168 \newpage
+               [5]
+<./figure/dashboard.png, id=70, 572.1375pt x 1023.825pt>
+File: ./figure/dashboard.png Graphic file (type png)
+<use ./figure/dashboard.png>
+Package pdftex.def Info: ./figure/dashboard.png  used on input line 190.
+(pdftex.def)             Requested size: 177.36078pt x 317.38246pt.
+<./figure/navigation_high_contrast.png, id=71, 572.1375pt x 1023.825pt>
+File: ./figure/navigation_high_contrast.png Graphic file (type png)
+<use ./figure/navigation_high_contrast.png>
+Package pdftex.def Info: ./figure/navigation_high_contrast.png  used on input l
+ine 191.
+(pdftex.def)             Requested size: 177.36078pt x 317.38246pt.
+ [6 <./figure/dashboard.png> <./figure/navigation_high_contrast.png>]
+<./figure/pollo.pdf, id=80, 406.51875pt x 406.51875pt>
 File: ./figure/pollo.pdf Graphic file (type pdf)
 <use ./figure/pollo.pdf>
-Package pdftex.def Info: ./figure/pollo.pdf  used on input line 114.
+Package pdftex.def Info: ./figure/pollo.pdf  used on input line 201.
 (pdftex.def)             Requested size: 170.71652pt x 170.71188pt.
- [3 <./figure/pollo.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
+ [7 <./figure/pollo.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 201.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 201.
  (./presentazione.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 201.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 201.
 Package rerunfilecheck Info: File `presentazione.out' has not changed.
-(rerunfilecheck)             Checksum: 3F48364FBE08EB9052268C22E0C11040;60.
+(rerunfilecheck)             Checksum: E75869C0C5EA8B3F88C8C7E9EBB15A1D;146.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -695,23 +766,24 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 10106 strings out of 492616
- 144875 string characters out of 6129482
+ 10175 strings out of 492616
+ 146191 string characters out of 6129482
  275063 words of memory out of 5000000
- 13857 multiletter control sequences out of 15000+600000
- 23556 words of font info for 86 fonts, out of 8000000 for 9000
+ 13907 multiletter control sequences out of 15000+600000
+ 31312 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,13n,31p,800b,349s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,13n,31p,800b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pf
 b></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.p
-fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.
-pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
-m10.pfb>
-Output written on presentazione.pdf (4 pages, 147953 bytes).
+fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pf
+b></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
+0.pfb>
+Output written on presentazione.pdf (10 pages, 1260696 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
- 19 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
+ 23 named destinations out of 1000 (max. 500000)
+ 55 words of extra memory for PDF output out of 10000 (max. 10000000)
 
