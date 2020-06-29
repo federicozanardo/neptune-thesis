@@ -85,113 +85,63 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduzione}
+\section{Progettazione e Sviluppo}
 
 \begin{firstheadlineitemize}
+	\item Requisiti per l'architettura
+	\begin{secondheadlineitemize}
+		\item Flessibile
+		\item Strutturata
+		\item Facile da utilizzare per implementare funzionalita' future
+	\end{secondheadlineitemize}
 
-\item \rosso{Contesto} di applicazione del progetto.
-
-\item Hardware e software utilizzato (Raspberry, ricevitore GPS e \textit{Argos}).
-
-\item \rosso{Classificazione} delle app mobili
-
-\item Dart e Flutter
-
-\begin{center}
-\includegraphics[scale=0.4]{native_hybrid_web}
-\end{center}
-
+	\item Architettura stratificata
+	\begin{figure}[htp]
+		\centering
+		\hfill
+		\begin{minipage}[b]{.3\columnwidth}
+			%\centering
+			\footnotesize
+			\begin{secondheadlineitemize}
+				\item \rosso{BLoC}
+				\item Repository
+			\end{secondheadlineitemize}
+		\end{minipage}
+		%\hfill
+		\begin{minipage}[c]{.5\columnwidth}
+			\begin{center}
+				\includegraphics[scale=0.25]{architettura_implementata}
+			\end{center}
+		\end{minipage}\hspace*{\fill}
+	\end{figure}
 \end{firstheadlineitemize}
 
 \newpage
 
-\section{Progettazione}
-
 \begin{firstheadlineitemize}
-
-\item Requisiti per l'architettura
-
-\begin{secondheadlineitemize}
-
-\item Flessibile
-\item Strutturata
-\item Facile da utilizzare per implementare funzionalita' future
-
-\end{secondheadlineitemize}
-
-\newpage
-
-\item Architettura dell'applicazione
-
-\begin{figure}[htp]
-\centering
-\hfill
-\begin{minipage}[b]{.3\columnwidth}
-\centering
-  \begin{secondheadlineitemize}
-
-\item Schermate
-\item Provider
-\item \rosso{BLoC}
-\item Repository
-\item Servizi
-
-\end{secondheadlineitemize}
-  %\caption{Didascalia della figura}\label{...}
-\end{minipage}
-%\hfill
-\begin{minipage}[b]{.5\columnwidth}
-  \begin{center}
-\includegraphics[scale=0.4]{architettura_implementata}
-\end{center}
-  %\captionof{table}{Didascalia della tabella}\label{...}
-\end{minipage}\hspace*{\fill}
-\end{figure}
-
-\end{firstheadlineitemize}
-
-\newpage
-
-\section{Realizzazione}
-
-\begin{firstheadlineitemize}
-
-\item Flusso dei dati
-\begin{secondheadlineitemize}
-	\item Polling della socket
-	\item I dati vengono salvati su una cache nel Repository
-	\item I dati vengono resi disponibili ai vari BLoC dal Repository
-	\item I BLoC provvedono a fornire un particolare set di dati alle schermate
-	\item Le schermate visualizzano i dati ricevuti dai rispettivi BLoC
-\end{secondheadlineitemize}
-
-\newpage
 
 \item Interfaccia grafica
 
 \begin{figure}[htp]
-\centering
-\hfill
-\begin{minipage}[b]{.3\columnwidth}
-\centering
-  \begin{secondheadlineitemize}
-
-\item \rosso{Intuitiva}
-\item Organizzata
-\item Semplice
-
-\end{secondheadlineitemize}
-  %\caption{Didascalia della figura}\label{...}
-\end{minipage}
-%\hfill
-\begin{minipage}[b]{.5\columnwidth}
-%  \begin{figure}[htp]
-	%\centering
-	\includegraphics[scale=0.31]{dashboard}
-	\includegraphics[scale=0.31]{navigation_high_contrast}
-%\end{figure}
-  %\captionof{table}{Didascalia della tabella}\label{...}
-\end{minipage}\hspace*{\fill}
+	\centering
+	\hfill
+	\begin{minipage}[c]{.3\columnwidth}
+		\centering
+	  	\begin{secondheadlineitemize}
+			\item \rosso{Intuitiva}
+			\item Organizzata
+			\item Semplice
+			\item \rosso{Reattiva}
+		\end{secondheadlineitemize}
+	\end{minipage}
+	%\hfill
+	\begin{minipage}[c]{.5\columnwidth}
+	%  \begin{figure}[htp]
+		%\centering
+		\includegraphics[scale=0.31]{dashboard}
+		\includegraphics[scale=0.31]{navigation_high_contrast}
+	%\end{figure}
+	\end{minipage}\hspace*{\fill}
 \end{figure}
 
 \end{firstheadlineitemize}
